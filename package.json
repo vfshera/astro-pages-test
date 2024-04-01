@@ -1,0 +1,14 @@
+{
+  "name": "astro-page-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "package:dev": "pnpm --filter astro-testpages dev",
+    "playground:dev": "pnpm --filter playground dev",
+    "dev": "pnpm package:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

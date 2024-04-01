@@ -1,0 +1,38 @@
+{
+  "name": "astro-testpages",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "astro-integration",
+    "astro"
+  ],
+  "author": {
+    "name": "Franklin Shera",
+    "url": "https://github.com/fshera"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "astro": "^4.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2"
+  }
+}
