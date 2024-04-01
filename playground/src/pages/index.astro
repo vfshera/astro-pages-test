@@ -1,16 +1,70 @@
 ---
+import { TEST_PAGES } from "../constants";
 
+const routes = Array.from({ length: TEST_PAGES }, (_, i) => {
+  return `/page-${i + 1}`;
+});
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+      <h1>Astro Page</h1>
+    </header>
+    <main>
+      <ul>
+        {
+          routes.map((route) => (
+            <li>
+              <a href={route}>{route}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
 </html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header {
+    max-width: 80%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    padding-block: 1rem;
+    gap: 1rem;
+  }
+
+  main {
+    max-width: 80%;
+    margin-inline: auto;
+    padding-block: 2rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    list-style: none;
+  }
+  ul a {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+    background-color: #f5f5f5;
+  }
+</style>
